@@ -19,3 +19,15 @@ var score =   Math.floor(Math.random() * 10) + 1;
 	
 	} // end switch (score)
 ```
+## Do-While
+```
+do {
+	      var score = Math.floor (Math.random() * 11 + 0);
+	    
+	 
+	      alert("Score was " + score);
+	       // Math.random gives you a num such that 0<=num<1
+	    } while (score < 6)  /*has to choose a score 6 or greater!  */
+	    
+	    
+```
