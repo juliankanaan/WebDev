@@ -1,0 +1,13 @@
+.cards, .extras {
+  padding: 20px;
+}
+#deal {
+  justify-content: center;
+  display: flex;
+}
+.homeCont{
+  padding-top: 30px;
+}
+nav {
+  margin-bottom: 20px; 
+}

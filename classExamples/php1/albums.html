@@ -1,0 +1,40 @@
+<head>
+<title> Music Order Form (Sample Form using HTML & PHP) </title>
+</head>
+<body bgcolor=LightGoldenrodYellow>
+<h1><center>Order Your Music Here</center></h1>
+
+<form action="http://i6.cims.nyu.edu/~nh2/php1/albums.php" method="post">
+
+Enter Full Name: <br>
+<input type=text name=yourname>
+<p>
+Enter your email address : <BR>
+<input type=text name=youremail>
+<p>
+
+Pick Your Favorite Operetta:<br>
+<select name=youroperetta>
+ <option>The Mikado</option>
+ <option>H.M.S. Pinafore</option>
+ <option>The Pirates of Penzance</option>
+ <option>The Merry Widow</option>
+ <option>Die Fledermaus</option>
+</select>
+<p>
+Payment Info:<br>
+<input type=radio name=yourpayment value=PP>PayPal 
+<input type=radio name=yourpayment value=CC>Credit Card 
+<input type=radio name=yourpayment value=FC>Free Coupon 
+<p>
+Choose Your Gift Wrap Options: <br>
+<input type="checkbox" name="yourgift" value="red" /> I'd like red paper<br />
+<input type="checkbox" name="yourgift" value="bow" /> I'd like a bow <br />
+<input type="checkbox" name="yourgift" value="ribbon" /> I'd like a ribbon 
+<p>
+<input type=submit value="Submit Your Order">
+<input type=reset value=Cancel>
+</form>
+</body>
+</html>
+
