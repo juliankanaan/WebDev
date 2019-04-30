@@ -1,0 +1,76 @@
+
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <link rel="stylesheet" href="css/supplemental.css" />
+  <script src="js/blackjack.js"></script>
+
+<title>Julian Kanaan Web Dev</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Welcome to Blackjack</h1>
+
+<p>Press Deal! to start the game</p>
+
+
+
+<div class="container">
+
+  <div class="cards" style="display: flex; justify-content: space-around;">
+    <div class="indivCard">
+      <img id="cardImg1" src="https://cs.nyu.edu/courses/spring19/CSCI-UA.0061-002/assign4_sp2019/cards/cardback.gif">
+      <div class="input-group">
+        <input type="text" id="card1form" class="form-control">
+        <div class="input-group-append">
+          <span class="input-group-text">points</span>
+        </div>
+      </div>
+    </div>
+    <div class="indivCard">
+      <img id="cardImg2" src="https://cs.nyu.edu/courses/spring19/CSCI-UA.0061-002/assign4_sp2019/cards/cardback.gif">
+      <div class="input-group">
+        <input type="text" id="card2form" class="form-control">
+        <div class="input-group-append">
+          <span class="input-group-text">points</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extras">
+    <button id="deal" type="button" class="btn btn-secondary">Deal!</button>
+
+    <h3> Total point in hand</h3>
+
+
+    <div class="input-group">
+      <input type="text" id="totalPoints" class="form-control">
+      <div class="input-group-append">
+        <span class="input-group-text">total points</span>
+      </div>
+    </div>
+
+    <p>Hands so far: </p>
+    <input type="text" id="handsSoFar" class="form-control" value="0">
+  </div>
+
+</div>
+
+
+
+</div>
+
+</body>
+
+</html>

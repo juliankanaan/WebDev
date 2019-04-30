@@ -1,6 +1,3 @@
-
-<html>
-
 <head>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -10,6 +7,7 @@
  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
   <link rel="stylesheet" href="css/supplemental.css" />
+  <script src="js/pollValidation.js"></script>
 
 <title>Julian Kanaan Web Dev</title>
 
@@ -26,22 +24,3 @@
     </ul>
   </div>
 </nav>
-
-<div class="container">
-
-    <h3>Hi there, submit the form below to translate your text into pig latin</h3>
-
-    <form action="pig-latin.php" method="post">
-      <div class="form-group">
-          <label for="pigLatinInput">Enter here</label>
-          <textarea type="input" name="userinput" class="form-control" placeholder="Write some words.." id="pigLatinInput" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <input type="hidden" name="submitted" value="true" />
-    </form>
-
-</div>
-
-</body>
-
-</html>
