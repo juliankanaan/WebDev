@@ -6,7 +6,6 @@ error_reporting(E_ALL);
 
 <?php
 
-
 if (isset($_POST['submitted'])) { // check that button was pressed
 
   $email = $_POST['email'];
@@ -54,8 +53,8 @@ function countColor($colorName){
 }
 function doesExist($email){
   // loop over existing results
-  $foundCount = 0;
   $email1 = $email . ":"; // adjusted for the colon
+  $foundCount = 0;
   $lines = file("results.txt");
   foreach ($lines as $line) {
     if (strrpos($line, $email1)){ # does any line already contain this email?
@@ -72,21 +71,29 @@ function doesExist($email){
 <html>
 <?php
 include("header.php");
-
-
 ?>
 <style>
 <?php # increment css width in 20px blocks per each submission
 ?>
-.colorNames img {
-  float: right;
+.redBar {
+  width: <?php echo $redCount * 20; ?>px;
+}
+.yellowBar {
+width: <?php echo $yellowCount * 20; ?>px;
+}
+.greenBar {
+width: <?php echo $greenCount * 20; ?>px;
+}
+.blueBar {
+  width: <?php echo $blueCount * 20; ?>px;
 }
 
 </style>
 
 
 <div class="container">
-  <h3>Made with PHP graphics</h3>
+  <h4>Histogram made with CSS</h4>
+
   <div class="changeButtons" style="display: none;">
     <input  type="radio" id="emailList" >
       <label  for="emailList">
@@ -108,27 +115,16 @@ include("header.php");
   <div id="histogramPanel">
     <h3>Histogram of poll: </h3>
 
-      <div class="colorNames">Yellow <img src="graphic.php?width=<?php echo $yellowCount * 20; ?>"></div>
-      <div class="colorNames">Blue <img src="graphic.php?width=<?php echo $blueCount * 20; ?>"></img></div>
-      <div class="colorNames">Red <img src="graphic.php?width=<?php echo $redCount * 20; ?>"></img></div>
-      <div class="colorNames">Green <img src="graphic.php?width=<?php echo $greenCount * 20; ?>"></img></div>
+      <div class="colorNames">Yellow <img class="yellowBar"></img></div>
+      <div class="colorNames">Blue <img class="blueBar"></img></div>
+      <div class="colorNames">Red <img class="redBar"></img></div>
+      <div class="colorNames">Green <img class="greenBar"></img></div>
 
 
   </div>
 </div>
 
 
-</div>
-<div class="container">
-<p>
-Graphics.php dynamically creates the correct image length using a function that
-takes the width as a parameter.
-
-It is invoked with the following (note the parameter in the URL):
-</p>
-<samp>
-src="graphic.php?width=<\?php echo $redCount * 20; ?\>
-</samp>
 </div>
 
 <?php include("footer.php"); ?>
