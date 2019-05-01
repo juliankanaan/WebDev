@@ -16,16 +16,16 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Julian</a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="aboutme.html">About Me</a></li>
-      <li class="nav-item"><a class="nav-link" href="other.html">Other</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Julian</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="http://i6.cims.nyu.edu/~jk5237/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutme.html">About Me</a></li>
+
+      </ul>
+    </div>
+  </nav>
 
 <div class="container homeCont">
 
@@ -35,12 +35,9 @@
 
 
 <ul>
-<li>HTML</li>
-<li><a href='assigment3.html'>Assignment 3</a></li>
-<li><a href='assignment4/index.html'>Assignment 4 - Blackjack</a></li>
-<li><a href='assignment5.html'>Assignment 5</a></li>
-<li><a href='assignment6.html'>Assignment 6</a></li>
-<li><a href='assignment7.html'>Assignment 7</a></li>
+<li><a href='assign3.html'>Assignment 3</a></li>
+<li><a href='assign4.html'>Assignment 4 - Blackjack</a></li>
+
 
 </ul>
 

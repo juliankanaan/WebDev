@@ -22,6 +22,11 @@ jQuery(document).ready(function() {
 
       jQuery("#totalPoints").val(total); // add up both cards & display
 
+      var handsSoFar = jQuery("#handsSoFar").val(); // get from inout
+
+      jQuery("#handsSoFar").val(parseInt(handsSoFar) + 1); // increment
+
+
       if (total == 21 ){
         blackjackCelebration();
       }
@@ -79,8 +84,9 @@ jQuery(document).ready(function() {
       return pointTotal;
     }
 
+
     function blackjackCelebration(){ // called when 21 is hit
       // open new window w/ gif anumation
-      window.location.replace("celebration.html"); 
+      window.location.replace("celebration.html");
     }
 }); // document.ready
