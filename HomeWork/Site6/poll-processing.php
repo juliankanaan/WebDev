@@ -53,10 +53,11 @@ function countColor($colorName){
 }
 function doesExist($email){
   // loop over existing results
+  $email1 = $email . ":"; // adjusted for the colon
   $foundCount = 0;
   $lines = file("results.txt");
   foreach ($lines as $line) {
-    if (strrpos($line, $email)){ # does any line already contain this email?
+    if (strrpos($line, $email1)){ # does any line already contain this email?
       $foundCount++; // increment
     }
   }
@@ -91,6 +92,8 @@ width: <?php echo $greenCount * 20; ?>px;
 
 
 <div class="container">
+  <h4>Histogram made with CSS</h4>
+
   <div class="changeButtons" style="display: none;">
     <input  type="radio" id="emailList" >
       <label  for="emailList">
@@ -124,7 +127,7 @@ width: <?php echo $greenCount * 20; ?>px;
 
 </div>
 
-
+<?php include("footer.php"); ?>
 </body>
 
 </html>

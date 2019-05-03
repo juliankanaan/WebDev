@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 <?php
 
-
+include("cookieSetter.php");
 if (isset($_POST['submitted'])) { // check that button was pressed
 
   $email = $_POST['email'];
@@ -15,11 +15,12 @@ if (isset($_POST['submitted'])) { // check that button was pressed
   // send over to text file 'results.txt'
 
 
-  if (!doesExist($email)){ #check that result doesnt already exist before writing
+  if (!readCookie($email)){ #check that email result doesnt already exist before writing
     $fp   = fopen('results.txt', "a+"); // open file
     $line = $email . ": " . $color . "\n"; // line by line
     fwrite($fp, $line); // write
     fclose($fp); // close it up
+    setNewCookie("email", $email); // set new cookie
   }
 }
 $redCount = countColor("red");

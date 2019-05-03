@@ -4,6 +4,10 @@
 <?php
 include('header.php');
 //include("js/pollValidation.js"); // dont let form get submitted before validation
+include("cookieSetter.php"); // to make 
+
+
+
 ?>
 
 

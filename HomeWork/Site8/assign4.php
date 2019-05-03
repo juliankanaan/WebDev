@@ -5,15 +5,26 @@ error_reporting(E_ALL);
 ?>
 <html>
 
-<?php include("header.php"); ?>
+<?php include("header.php");
+      include("cookieSetter.php");
 
+      setNewCookie("hasPlayed", "true"); // set. function will detect if cookie already set
+
+      $hasPlayed = readCookie("hasPlayed");
+
+
+?>
+<script src="js/blackjack.js"></script>
 <div class="container">
 
 <h1>Welcome to Blackjack</h1>
-
 <p>Press Deal! to start the game</p>
-
-
+<?php if ($hasPlayed){
+  echo "<p>Cookie says you have played before. Welcome back!</p>";
+} else {
+  echo "<p>Cookie says you have <i>never</i> played before. Hi!</p>";
+}
+?>
 
 <div class="container">
 

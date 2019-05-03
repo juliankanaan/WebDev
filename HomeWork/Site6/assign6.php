@@ -43,10 +43,13 @@ include('header.php');
 </div>
 
 
+<div class="container">
 
-
+  <p>View <a href="results.txt">results.txt</a></p>
 </div>
 
+
+<?php include("footer.php"); ?>
 </body>
 
 </html>

@@ -11,8 +11,21 @@ function readCookie($name){
     $value = $_COOKIE[$name];
 
   }
-  return $value;
+  return $value; // return val of cookie
 
 }
+
+function setNewCookie($name, $val){
+
+  $success = NULL;
+
+  if (!isset($_COOKIE[$name])){
+    $success = setcookie($name, $value);
+  }
+  return $success;
+
+
+}
+
 
 ?>
