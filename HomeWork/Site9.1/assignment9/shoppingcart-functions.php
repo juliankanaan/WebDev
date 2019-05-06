@@ -3,10 +3,7 @@
 // inventory management
 
 /*
-ItemName
-price
-quantity
-url
+ItemName,price,quantity,url
 */
 
 
@@ -93,7 +90,7 @@ class Inventory extends Item { # merchant inventory
 
       } else {
         echo "<div class='product'>";
-        echo "<img src='" . $item->imageUrl . "' width=200>";
+        echo "<img src='../assets/" . $item->imageUrl . "' width=200>";
         echo "<p>" . $item->name . "- Stock: " .$item->quantity . "</p>";
         echo "<p>$" . $item->price . "</p>";
 

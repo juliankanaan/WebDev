@@ -3,12 +3,8 @@
 
 <?php
 
-
-
 // creating a shopping cart
 include_once("shoppingcart-functions.php");
-//include("inventoryFormHandler.php"); # handle if form gets submited
-
 
 $cartStuff = readItemsFromFile(); # read current inventory from .txt file
 
