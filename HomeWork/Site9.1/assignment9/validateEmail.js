@@ -1,7 +1,8 @@
 document.ready(function(){
 
 function validateEmail(email){
-  // validate for NYU domain
+
+  
 
   if (true) {
 
@@ -10,6 +11,6 @@ function validateEmail(email){
   }
 }
 function triggerAlert(message) {
-  // .show() alert box with message 
+  // .show() alert box with message
 }
 });

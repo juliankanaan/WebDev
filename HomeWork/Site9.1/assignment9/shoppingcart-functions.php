@@ -2,12 +2,10 @@
 
 // inventory management
 
-/*
-ItemName,price,quantity,url
-*/
-
-
 class Item {
+
+  # ItemName, price, quantity, url
+
   public $price;
   public $name; // string
   public $imageUrl;
@@ -20,28 +18,17 @@ class Item {
     $this->quantity = $quant;
     //writeItem($ItemName, $itemPrice, $url, $quant);
   }
-  function getImageUrl(){
-    return $this->imageUrl;
-  }
-  function getName(){
-    return $this->name;
-  }
-  function getQuantity(){
-    return $this->$quantity;
-  }
-  function setImageUrl($pathString){
-    $this->imageUrl = $pathString;
-  } // uage: echo $item1->getName();
 
-}#usage: $item1 = new Item("pickles", "10.10");
+
+}#usage: $item1 = new Item("pickles", "10.10" etc);
 
 class Inventory extends Item { # merchant inventory
 
   public $inventoryItems = []; // empty array for Items to go in
 
-  function __construct(){
-
-  } // no args
+  function __construct($itemArr){
+    $this->inventoryItems = $itemArr;
+  }
   function findItemByName($nameString){
     $val = NULL ;
     foreach ($this->inventoryItems as $obj) {
@@ -79,9 +66,8 @@ class Inventory extends Item { # merchant inventory
         //rewriteFile($items);
         print("removed");
       }
-    }
-
-  }
+    } // loop
+  } // removeItem();
 
 
   function printItems(){
@@ -97,7 +83,28 @@ class Inventory extends Item { # merchant inventory
         echo "</div>";
       }
     }
-  }
+  } // printItems()
+   function printProductPage(){
+     foreach ($this->inventoryItems as $item) {
+       if ($item->quantity > 0){ # in stock
+         echo "<div class='product'>";
+         echo "<img src='../assets/" . $item->imageUrl . "' width=200>";
+         echo "<p>" . $item->name . "- Stock: " .$item->quantity . "</p>";
+         echo "<p>$" . $item->price . "</p>";
+         echo "<p><button name='" . $item->name . "' value='addtocart'>Add to cart</button></p>";
+         echo "</div>";
+
+       } else { # not in stock
+         echo "<div class='product'>";
+         echo "<img src='../assets/" . $item->imageUrl . "' width=200>";
+         echo "<p>" . $item->name . "- Stock: " .$item->quantity . "</p>";
+         echo "<p>$" . $item->price . "</p>";
+         echo "<p><i>Not in stock</p>";
+         echo "</div>";
+       }
+     } // foreach loop
+   } // printProductPage();
+
 
 }
 function readItemsFromFile(){
@@ -186,13 +193,5 @@ function rewriteFile($oldItems){
   }
   fclose($fp);
 }
-
-
-
-class ShoppingCart extends Item {
-
-  // to be cont'd
-
-} // end ShoppingCart
 
 ?>
