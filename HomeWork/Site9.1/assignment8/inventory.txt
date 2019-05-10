@@ -1,0 +1,3 @@
+bananas,20.00,banana.jpg,43
+tomato,1.00,tomato.jpg,44
+raddish,1.43,raddish.jpeg,20
