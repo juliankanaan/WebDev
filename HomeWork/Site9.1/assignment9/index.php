@@ -13,17 +13,18 @@ error_reporting(E_ALL);
   ?>
 
   <div class="container">
-    <form class="" action="products.php" method="get" >
-      <div class="form-group.php"
+    <form id="custForm" action="products.php" method="get" onsubmit="return false;">
+      <div class="form-group.php">
       <input type="text" name="firstName" value="" placeholder="John" required>
       <input type="text" name="lastName" value="" placeholder="Smith" required>
-      <input type="text" name="email" value="" placeholder="you@gmail.com" required>
+      <input id="emailCust" type="text" name="email" value="" placeholder="you@gmail.com" required>
       <input type="hidden" name="submitted" value="true">
-      <input type="submit" name="submit" value="Submit Form">
+      <input id="subCust" type="submit" name="submit" value="Submit">
+      </div>
     </form>
   </div>
 
-<?php include("validateEmail.js"); ?>
+<script src='validateEmail.js'></script>
 </body>
-<?php include("footer.php"); ?>
+
 </html>

@@ -1,16 +1,30 @@
 document.ready(function(){
 
-function validateEmail(email){
+  $("#subCust").click(function(e){
+      e.preventDefault();
+      var email = $("#emailCust").val();
 
-  
+      var isGoodEmail = validateEmail(email);
 
-  if (true) {
+      // submit form only if its a good email
+      if (isGoodEmail) {
+        $("#custForm").submit();
+      } else {
+        triggerAlert("Bad email");
+      }
 
-  } else {
-    triggerAlert("Bad email");
+
+  });
+
+  function validateEmail(email){
+
+    if (!email.indexOf("@nyu.edu") >=0) {
+      return false;
+    } else {
+      return true;
+    }
   }
-}
-function triggerAlert(message) {
-  // .show() alert box with message
-}
+  function triggerAlert(message) {
+    alert(message);
+  }
 });

@@ -1,0 +1,17 @@
+
+  [
+    {
+      "date" : "011119",
+      "hospitalInfo" : {
+        "id" : "2113221",
+        "name" : "Houston Methodist",
+        "city" : "houston",
+        "state" : "texas"
+      },
+      "procedureInfo" : {
+        "name" : "ALTELPLASE INJECTION 20MG",
+        "price" : "1290.00",
+        "date" : "011119"
+      }
+  }
+  ]

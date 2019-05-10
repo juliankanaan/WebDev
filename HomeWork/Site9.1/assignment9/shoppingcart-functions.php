@@ -87,12 +87,16 @@ class Inventory extends Item { # merchant inventory
    function printProductPage(){
      foreach ($this->inventoryItems as $item) {
        if ($item->quantity > 0){ # in stock
-         echo "<div class='product'>";
-         echo "<img src='../assets/" . $item->imageUrl . "' width=200>";
-         echo "<p>" . $item->name . "- Stock: " .$item->quantity . "</p>";
-         echo "<p>$" . $item->price . "</p>";
-         echo "<p><button name='" . $item->name . "' value='addtocart'>Add to cart</button></p>";
-         echo "</div>";
+         echo "<form action='' type='get'>";
+           echo "<div class='product'>";
+           echo "<img src='../assets/" . $item->imageUrl . "' width=200>";
+           echo "<p>" . $item->name . "- Stock: " .$item->quantity . "</p>";
+           echo "<p>$" . $item->price . "</p>";
+           echo "<p><input type='submit' name='submit' value='Add to Cart'></p>";
+           echo "<p><input type='hidden' name='itemname' value='" . $item->name . "'></p>";
+           echo "<p><input type='hidden' name='action' value='addtocart'></p>";
+           echo "</div>";
+          echo "</form>";
 
        } else { # not in stock
          echo "<div class='product'>";
@@ -193,5 +197,6 @@ function rewriteFile($oldItems){
   }
   fclose($fp);
 }
+
 
 ?>

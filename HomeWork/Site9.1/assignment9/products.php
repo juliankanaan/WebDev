@@ -3,6 +3,11 @@ session_start();
 $sessionID = session_id();
 
  ?>
+ <?php
+ ini_set('display_errors', true);
+ ini_set('display_startup_errors', true);
+ error_reporting(E_ALL);
+ ?>
 <html>
 <head>
 <?php
@@ -15,20 +20,25 @@ $inventoryObj = new Inventory($inventoryItems);
 
 $userInfo = captureFormGets(); // $_GET values from submission
 // create User with these objects
-$currentUser = new User( $userInfo[0],$userInfo[1], $userInfo[2]);
+
 // attach object to session
-setUserSession($currentUser);
+
+if (!$sessionID) { # create new user object if user doesnt have one yet
+  $currentUser = new User( $userInfo[0],$userInfo[1], $userInfo[2]);
+  setUserSession($currentUser);
+}
+
 
 // create cart Object for user
 $currentCart = new ShoppingCart();
 
 if ($_GET['action']) { // handle Form submissions if they exist
-  $result = handleCartChanges($currentCart, $currentUser);
+  $result = handleCartChanges($currentCart, $currentUser, $inventoryObj);
 
   print($result['type']); // success or failure
   print($result['message']); // explanation
 }
-
+print_r($currentCart);
 
 
 include("header.php");
@@ -49,5 +59,4 @@ include("header.php");
   </div>
 
 
-  <?php include("footer.php"); ?>
   </html>

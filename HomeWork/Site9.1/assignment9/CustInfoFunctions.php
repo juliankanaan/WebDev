@@ -44,11 +44,11 @@ class ShoppingCart extends Item {
 
 }
 
-class User {
+class User extends ShoppingCart {
   public $email;
   public $firstName;
   public $lastName;
-  public ShoppingCart $cart = NULL; // each user has ShoppingCar(empty by default
+  public $cart = [];  // each user has ShoppingCar(empty by default
 
 
 
@@ -56,6 +56,7 @@ class User {
     $this->firstName = $firstName;
     $this->lastName = $lastName;
     $this->email = $email;
+    $this->cart = new ShoppingCart();
 
   }
   function getCartObject(){
@@ -86,12 +87,12 @@ function captureFormGets(){
 
   return $details;
 }
-function handleCartChanges($currentCart, $currentUser){
+function handleCartChanges($currentCart, $currentUser, $inventory){
   $action = $_GET['action'];
   $itemName = $_GET['itemname'];
   $result = array('type' => "failure", # success or failure
-                  'message' = "could not handle change. whoops.", # explanation
-                  'cartBalance' = $currentCart->calculateBalance()
+                  'message' => "could not handle change. whoops.", # explanation
+                  'cartBalance' => $currentCart->calculateBalance()
                   );
 
   # url string: /?action=addtocart&itemname=bananas
