@@ -1,13 +1,11 @@
-document.ready(function(){
+$(document).ready(function(){
 
   $("#subCust").click(function(e){
       e.preventDefault();
       var email = $("#emailCust").val();
 
-      var isGoodEmail = validateEmail(email);
-
       // submit form only if its a good email
-      if (isGoodEmail) {
+      if (validateEmail(email)) {
         $("#custForm").submit();
       } else {
         triggerAlert("Bad email");
@@ -18,7 +16,7 @@ document.ready(function(){
 
   function validateEmail(email){
 
-    if (!email.indexOf("@nyu.edu") >=0) {
+    if (!email.includes("@nyu.edu")) {
       return false;
     } else {
       return true;
@@ -27,4 +25,5 @@ document.ready(function(){
   function triggerAlert(message) {
     alert(message);
   }
+  console.log(validateEmail("jk@nyu.edu") );
 });

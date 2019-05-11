@@ -98,8 +98,9 @@ class Inventory extends Item { # merchant inventory
            echo "</div>";
           echo "</form>";
 
-       } else { # not in stock
+       } else { # out of stock
          echo "<div class='product'>";
+         // echo outOfStockGraphicHMTL(); // @TODO: implement
          echo "<img src='../assets/" . $item->imageUrl . "' width=200>";
          echo "<p>" . $item->name . "- Stock: " .$item->quantity . "</p>";
          echo "<p>$" . $item->price . "</p>";
@@ -197,6 +198,13 @@ function rewriteFile($oldItems){
   }
   fclose($fp);
 }
+function outOfStockGraphicHMTL(){
+  # if stock of item in loop = 0, call this and create graphic
+  $graphicUrl = '../assets/outOfStockGraphic.php';
 
+  $html = "<img src='" . $graphicUrl . "' width=200>";
+
+  return $html;
+}
 
 ?>

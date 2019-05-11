@@ -21,13 +21,5 @@ nav {
 }
 .footer{
   position: absolute;
-  bottom: 0;
-}
-.one {
-  display: flex;
-  justify-content: center;
-
-}
-.checkout-grid {
-  width: 75%;
+  bottom: 0; 
 }

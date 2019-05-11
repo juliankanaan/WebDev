@@ -40,9 +40,7 @@ class ShoppingCart extends Item {
     return $matchingItem;
   }
 
-
-
-}
+} // ShoppingCart class
 
 class User extends ShoppingCart {
   public $email;
@@ -50,44 +48,53 @@ class User extends ShoppingCart {
   public $lastName;
   public $cart = [];  // each user has ShoppingCar(empty by default
 
-
-
   function __construct($firstName, $lastName, $email){
     $this->firstName = $firstName;
     $this->lastName = $lastName;
     $this->email = $email;
-    $this->cart = new ShoppingCart();
+    $this->cart = new ShoppingCart(); # assign ShoppingCart object
 
   }
   function getCartObject(){
     return $this->cart;
   }
+  function setCartObject($cartObj){
+    $this->cart = $cartObj;
+  }
 
 } // end User class
 
 
-function setUserSession($userObj){
+function setUserInfoToSession($userObj){
+  session_start();
   $_SESSION['userDetails'] = serialize($userObj); // session data serialized
 
 }
-function retrieverUserSession(){
+function retrieveUserInfoFromSession(){
+  session_start();
   $userObj = unserialize( $_SESSION['userDetails'] );
 
   return $userObj;
 }
 function captureFormGets(){
 
-  $details = array(); // empty
+    $details = array(); // empty
+    if (isset($_GET['firstName'])){
+    $firstName = $_GET['firstName'];
+    $lastName  = $_GET['lastName'];
+    $email = $_GET['email'];
 
-  $firstName = $_GET['firstName'];
-  $lastName  = $_GET['lastName'];
-  $email = $_GET['email'];
+    array_push($details, $firstName, $lastName, $email);
+    return $details;
+  } else {
+    return null;
+  }
 
-  array_push($details, $firstName, $lastName, $email);
-
-  return $details;
 }
-function handleCartChanges($currentCart, $currentUser, $inventory){
+function handleCartChanges($currentUser, $inventory){
+
+  $currentCart = $currentUser->cart;
+
   $action = $_GET['action'];
   $itemName = $_GET['itemname'];
   $result = array('type' => "failure", # success or failure
@@ -104,7 +111,7 @@ function handleCartChanges($currentCart, $currentUser, $inventory){
     if ($itemObj) { // did we find this item?
       if ($itemObj->quantity > 0) { // ..is the item in stock?
         $currentCart->addItem($itemObj);
-
+        setUserInfoToSession($currentUser); // update session info
         $result['type'] = "success";
         $result['message'] = "Added to cart!";
         $result['cartBalance'] = $currentCart->calculateBalance();
@@ -133,5 +140,9 @@ function handleCartChanges($currentCart, $currentUser, $inventory){
   } // deleteitem
 
   return $result;
-}
+} // handleCartChanges()
+
+
+
+
  ?>
