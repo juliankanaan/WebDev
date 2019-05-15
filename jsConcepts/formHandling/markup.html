@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+    </script><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title></title>
+  </head>
+  <body>
+    <form id="userData" onsubmit="return false">
+      <input name='name' id='nameInput' placeholder="John Smith"></input>
+
+      <input name='email' id='emailInput' placeholder="you@gmail.com"></input>
+
+      <button onclick="handleForm(this.form);">Submit</button>
+    </form>
+    <div class="container">
+      <p id="emailOutput"></p>
+      <p id="nameOutput"></p>
+    </div>
+
+    <script src="handler.js"></script>
+  </body>
+</html>
