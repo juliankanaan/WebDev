@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>JavaScript Timing: Set Interval</title>
+    <style>
+      p {
+        font-family: Helvetica;
+        font-size: 3em;
+        color: red;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <p>44</p>
+    <button type="button" id="stop">Stop</button>
+
+    <script>
+      var stopButton = document.querySelector('#stop');
+      var text = document.querySelector('p');
+      var timer = setInterval(count, 100);
+
+      function count() {
+        // convert element content to integer
+        var number = parseInt(text.textContent);
+        // check data type
+        console.log(typeof(number));
+        // add 1 and write to page
+        text.textContent = (number + 1);
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+      }
+
+      stopButton.addEventListener('click', stopTimer);
+    </script>
+  
+</body></html>

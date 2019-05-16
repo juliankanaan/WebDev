@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>JavaScript Timing 2</title>
+	<style>
+	  p{
+	  	font-family: helvetica;
+	  	font-size: 3em;
+	  	color: red;
+	  
+	  }
+	
+	
+	</style>
+	
+	
+</head>
+<body>
+ <p>44</p>
+ <button type="button" id="stop">Stop</button>
+ 
+ 
+ <script>
+    var stopButton = document.querySelector('#stop');
+    var text = document.querySelector('p');
+    var timer = setInterval(count, 100);
+    
+    stopButton.addEventListener('click', stopTimer);
+    
+    function count() {
+    	// convert element to integer
+    	
+    	var number = parseInt(text.textContent);
+    	
+    	text.textContent = (number + 1);
+    
+    }  // function count
+    
+
+
+     function stopTimer() {
+    	clearInterval(timer);
+ 
+     }  // end function stopTimer
+ 
+
+</script>
+</body>
+</html>
+
+
+
+
+
+

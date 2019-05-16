@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>JavaScript Timing</title>
+	<style>
+	  p{
+	  	font-family: helvetica;
+	  	font-size: 3em;
+	  	color: red;
+	  
+	  }
+	
+	
+	</style>
+	
+	
+</head>
+<body>
+  <p>Ready...  </p>
+
+<script>
+	var text= document.querySelector('p');
+	
+	var timing = setTimeout(go, 3000);
+	
+    function go() {
+    	text.textContent = "Go!";
+    
+    }
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+

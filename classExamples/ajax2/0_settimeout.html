@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Timing: Set Timeout</title>
+    <style>
+      p {
+        font-family: Helvetica;
+        font-size: 3em;
+        color: red;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <p>Ready . . . </p>
+
+    <script>
+      var text = document.querySelector('p');
+      var timing = setTimeout(go, 3000);
+
+      function go() {
+        text.textContent = "Go!";
+      }
+    </script>
+  </body>
+</html>

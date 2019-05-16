@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <style>
+      p {
+        font-family: Helvetica;
+        font-size: 3em;
+        color: red;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <p>25</p>
+
+    <button type="button" id="go">Go</button>
+    <button type="button" id="stop">Stop</button>
+    <button type="button" id="reset">Reset</button>
+
+    <script>
+      var stopButton = document.querySelector('#stop');
+      var goButton = document.querySelector('#go');
+      var resetButton = document.querySelector('#reset');
+
+      var text = document.querySelector('p');
+      var timer;
+
+      function count() {
+        // convert element content to integer
+        var number = parseInt(text.textContent);
+        // check data type
+        console.log(typeof(number));
+        // add 1 and write to page
+        text.textContent = (number + 1);
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+      }
+
+      function startTimer() {
+        clearInterval(timer); // to avoid runaway timer
+        timer = setInterval(count, 100);
+      }
+
+      function resetTimer() {
+        text.textContent = '0';
+      }
+
+      stopButton.addEventListener('click', stopTimer);
+      goButton.addEventListener('click', startTimer);
+      resetButton.addEventListener('click', resetTimer);
+    </script>
+  
+</body></html>

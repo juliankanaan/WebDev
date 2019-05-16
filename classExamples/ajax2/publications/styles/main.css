@@ -1,0 +1,95 @@
+/* Layout */
+
+main {
+	width: 100%;
+	border-top: 1px solid black;
+	padding-top: 20px;
+}
+
+figure {
+	width: 220px;
+	border-top: 1px dotted black;
+	float: left;
+	margin: 0px 20px 20px 0px;
+	padding-top: 20px;
+}
+
+nav {
+	width: 220px;
+	border-top: 1px dotted black;
+	float: left;
+	margin: 0px 20px 20px 0px;
+	padding-top: 20px;
+}
+
+article {
+	width: 460px;
+	border-top: 1px dotted black;
+	float: left;
+	margin: 0px 0px 20px 0px;
+	padding-top: 20px;
+}
+
+/* Zines */ 
+
+div.zine {
+	width: 220px;
+	height: 300px;
+}
+
+#red {background-color: red;}
+#green {background-color: green;}
+#blue {background-color: blue;}
+
+/* Text */
+
+@font-face {
+  font-family: Raleway;
+  src:
+    url('fonts/raleway_thin-webfont.ttf'),
+    url('fonts/raleway_thin-webfont.svg'),
+    url('fonts/raleway_thin-webfont.woff'),
+    url('fonts/raleway_thin-webfont.eot');
+}
+
+h1, h2, h3, li {
+	font-family: Raleway, Helvetica, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+p {
+	font-family: Georgia;
+	font-size: 1em;
+	line-height: 1.2em;
+	margin-top: 0;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 20px;
+}
+
+.selected {
+	background-color: yellow;
+}
+
+/* Links */
+
+a:link, a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	background-color: yellow;
+}
+
+a:active {
+	color: white;
+}
